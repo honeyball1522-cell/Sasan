@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>روتین روزانه ساسان</title>
+<meta name="theme-color" content="#12211F">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap" id="app" style="display:none;">
+  <header>
+    <div>
+      <h1>روتین روزانه ساسان</h1>
+      <p>هر بار که کاری رو انجام دادی تیک بزن؛ امتیاز روزانه و هفتگی به درصد محاسبه می‌شه</p>
+    </div>
+    <button id="resetBtn">شروع هفته‌ی جدید</button>
+  </header>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="card">
+    <div class="daily-stat">
+      <span class="lbl" id="dailyLbl">امتیاز امروز</span>
+      <span class="val" id="dailyPercent">0%</span>
+    </div>
+    <div id="taskList"></div>
+    <form class="add-form" id="addForm">
+      <input type="text" id="newTaskText" placeholder="مثلاً: مدیتیشن" maxlength="60" required>
+      <input type="number" id="newTaskCount" placeholder="تعداد دفعات در روز" min="1" max="10" value="1" required>
+      <button type="submit">افزودن</button>
+    </form>
+    <p class="add-hint">هر بار تیک‌زدن ۱۰ امتیاز داره؛ برای کاری مثل مسواک که چندبار در روزه، تعداد دفعات رو وارد کن.</p>
+  </div>
+
+  <div class="expense-card">
+    <div class="expense-title-row">
+      <h3 id="expenseTitle">خرج‌های امروز</h3>
+      <span class="expense-day-total" id="expenseDayTotal">۰ تومان</span>
+    </div>
+    <div id="expenseList"></div>
+    <form class="expense-add-form" id="expenseForm">
+      <input type="text" id="newExpenseLabel" placeholder="بابت چی؟ (اختیاری)" maxlength="40">
+      <input type="number" id="newExpenseAmount" placeholder="مبلغ به تومان" min="0" step="1" required>
+      <button type="submit">افزودن</button>
+    </form>
+  </div>
+
+  <p class="weekly-title" id="weeklyTitle">امتیاز هفتگی</p>
+  <div class="seal-row">
+    <div class="seal">
+      <span class="num" id="weekPercent">0%</span>
+      <span class="lbl">هفته</span>
+    </div>
+    <p class="seal-desc" id="weekDesc">هنوز کاری تیک نخورده. شروع کن!</p>
+  </div>
+
+  <div class="bars" id="bars"></div>
+
+  <div class="week-expense-stat">
+    <span class="lbl">مجموع خرج‌های این هفته</span>
+    <span class="val" id="weekExpenseTotal">۰ تومان</span>
+  </div>
+</div>
+<div id="loading">در حال بارگذاری...</div>
+
+<script src="script.js"></script>
+</body>
+</html>
